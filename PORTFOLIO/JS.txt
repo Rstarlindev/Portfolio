@@ -1,0 +1,724 @@
+JavaScript(abv. JS) est un langage de script orienté objet créé en 1995 par Netscape. Il est le plus utilisé pour les pages web, mais aussi en dehors des navigateurs, côté serveur comme NodeJS ou dans divers programmes comme Adobe Acrobat.
+
+Le code JS est interprété à la volée, il est donc lisible directement depuis les navigateurs.
+
+JavaScript utilise le concept de prototype et dispose d'un typage faible et dynamique qui permet de programmer de manière fonctionnelle, impérative, et orientée objet.
+
+Le JavaScript est défini par le standard ECMAScript. Plusieurs implémentations du moteur sont disponibles :
+
+	- SpiderMonkey hébergé par Mozilla (de Netscape, en C)
+	- Rhino par Mozilla (Netscape également, en Java)
+	- V8 de Google, embarqué dans Chrome et dernières versions d'Opera
+	- JavaScriptCore, de Apple, dans Safari / Webkit
+	- Chakra dans Internet Explorer qui implémente JScript (droits de marques)
+	
+Le principal portail de documentation JavaScript est MDN : Documentation du Web de Mozilla Foundation developer.mozilla.org
+
+La diversité de ces implémentations entraine certaines différences de compatibilité, d'interprétation, et d'affichage selon les navigateurs.
+Le site caniuse.com maintient une liste de compatibilité des différents APIs Javascript en fonction des navigateurs et des éventuels bugs ou incohérences.
+
+
+Navigateurs
+
+	moyennes régies statistiques toutes plates-formes confondues
+
+	Chrome 52.4%
+	
+	Safari 19.1%
+	
+	Firefox 6.8%
+	
+	IE / Edge 9.7%
+	
+	Opera 2.7%
+	
+	Android 1.9%
+	
+	UC 2.5% (Chine)
+	
+	Autres 5%
+	
+	
+Protocoles
+
+	http : hypertext transfer protocol / port 80
+	
+	https : hypertext transfer protocol secure / port 443
+	
+	ssh secure shell port 22
+	
+	ftp file transfer protocol port 21
+	
+	
+	
+
+HTML elements
+	
+	<head
+	
+		la balise head contient les méta-données du document, informations générales, et liens vers des scripts ou feuilles de style
+	
+		<title
+		
+			définit le titre de la page affiché au niveau de l'onglet / barre de titre
+		
+		<meta
+		
+			contient toutes les informations abstraites de la page : jeu de caractères, comportement du cache, mise à l'échelle de l'affichage ...
+		
+		<link
+		
+			permet de lier une feuille de style à la page ou de définir les langues disponibles
+		
+		<style
+		
+			insertion de la feuille de style directement dans la page html
+		
+		<script
+	
+			indique les fichiers de script à charger dans la page
+	
+	<body
+	
+		la balise body contient le corps de la page, c'est à dire la partie affichée à l'écran
+	
+		<article
+		
+			la balise article permet de formater des données de manière autonome pour les utiliser dans des flux de publications
+			c.f. opengraph protocol ogp.me
+		
+		<h1-6
+		
+			représente 6 niveaux de titres dans un document : h1 à h6 > plus important au moins important
+		
+		<div
+		
+			conteneur générique permettant d'organiser et hiérarchiser l'affichage de la page
+		
+		<nav
+		
+			représente une section de page contenant des liens vers d'autres pages ou vers une autre section de la même page
+		
+		<li
+		
+			élément d'une liste, doit être inséré dans une balise liste <ul ou <ol
+		
+		<ol
+		
+			liste ordonnée, généralement affichée avec un indice par élément
+		
+		<ul
+		
+			liste non ordonnée, affichage en liste à puces
+		
+		<p
+		
+			paragraphe de texte
+		
+		<a
+		
+			définit un lien hypertexte vers une autre page ou une section de la page courante
+		
+		<table
+		
+			permet de représenter des données sous forme de tableau à deux dimensions
+		
+		<tr
+		
+			représente une ligne d'une table
+		
+		<td
+		
+			cellule d'une ligne
+		
+		<br
+		
+			représente un retour chariot
+		
+		<audio
+		
+			permet d'intégrer un contenu sonore dans un document
+		
+		<video
+		
+			intègre un contenu vidéo dans un document
+		
+		<canvas
+		
+			permet de modifier une zone graphique via un script
+		
+		<button
+		
+			contrôle interactif ayant la forme d'un bouton
+		
+		<form
+		
+			représente une section d'un document qui contient des contrôles interactifs permettant à un utilisateur d'envoyer des données à un serveur web
+
+		<textarea
+		
+			contrôle qui permettant d'éditer du texte sur plusieurs lignes
+		
+		<input
+		
+			utilisé pour créer des contenus interactifs
+		
+			- button
+			
+				un bouton sans comportement par défaut
+			
+			- checkbox
+			
+				une case à cocher
+			
+			- radio
+			
+				un bouton radio
+			
+			- file
+			
+				permet à l'utilisateur de sélectionner un fichier
+			
+			- text
+			
+				champ de texte sur une seule ligne
+			
+			- password
+			
+				champ de saisie sur une seule ligne dont la valeur est masquée
+			
+			- hidden
+			
+				contrôle qui n'est pas affiché mais dont la valeur est envoyée au serveur
+		
+			- submit
+			
+				permt de soumettre le formulaire
+				
+			- reset
+			
+				restaure les valeurs par défaut du formulaire
+		
+		<select
+			
+			fournit une liste d'options parmi lesquelles l'utilisateur pourra choisir
+		
+		<img
+		
+			insérer une image dans un document
+		
+
+
+Notions :
+
+	0 . DOM
+
+		Le DOM "Document Object Model" représente le document comme un ensemble de noeuds et d'objets possédant des propriétés et des méthodes. Les nœuds peuvent également avoir des gestionnaires d'événements qui se déclenchent lorsqu'un événement se produit. Cela permet de manipuler des pages web grâce à des scripts et/ou des langages de programmation.
+	
+	
+	1 . console
+	
+		- log : affiche un message dans la console
+		- warn : affiche un message d'avertissement
+		- error : affiche un message d'erreur
+		- trace : non standardisé : affiche le callstack en cours (dev only)
+		
+		la console permet également de taper des instructions JS, par exemple : "var a = 5" [ENTER] puis "a+5" [ENTER] // affiche 10
+	
+	
+	2 . déclarations
+	
+		- var
+		
+			Instruction permettant de déclarer une variable, éventuellement en fournissant une valeur pour permettant de l'initialiser
+			
+		- let
+		
+			Permet de déclarer une variable locale dans une portée d'un bloc et éventuellement d'initialiser sa valeur
+		
+		- const
+		
+			Déclare une constante en lecture seule
+			on ne peut pas déclarer de const en mode strict
+	
+	
+	3 . typage faible
+	
+		une variable peut être initialisée avec un nombre et remplacée par une chaine de caractères ou n'importe quel autre objet
+	
+	
+	4 . use strict
+	
+		à insérer au début des fichiers de scripts, ordonne au JavaScript de s'exécuter en mode strict, c'est à dire empêcher l'utilisation de variables non déclarées. il permet d'écrire du code "safe". ex: une faute de frappe déclare une nouvelle variable globale.
+	
+	
+	5 . values
+	
+		- null
+		
+			la valeur null est un littéral javascript représentant la nullité au sens où aucune valeur pour l'objet n'est présente
+		
+		- undefined
+		
+			valeur par défaut des variables ou expressions non définies, undefined est une propriété non-configurable et non accessible en écriture
+		
+		- NaN
+		
+			propriété globale, NaN est une valeur utilisée pour représenter une quantité qui n'est pas un nombre (Not a Number), elle est rarement utilisée et est généralement retournée par une fonction mathématique ayant échoué
+		
+		- Infinity
+		
+			cette valeur se comporte comme l'infini mathématique : tout ce qui est multiplié par Infinity vaut Infinity, et tout ce qui est divisé par Infinity vaut 0
+		
+		- typeof
+		
+			l'opérateur typeof peut être utilisé pour connaitre le type d'une variable ou expression
+			
+		- instanceof
+		
+			l'opérateur instanceof permet de tester si un objet possède, dans sa chaîne de prototype, la propriété prototype d'un certain constructeur.
+		
+		- hasOwnProperty
+		
+			renvoie true si l'objet testé contient la propriété passée en argument
+		
+		- this
+		
+			this fait référence à l'objet global ou à l'objet instancié s'il est utilisé dans une classe. on peut le définir en exécutant une fonction avec la méthode call ou apply
+		
+		- new
+			
+			l'opérateur new permet d'instancier un objet (classe, fonction, prototype)
+		
+	6 . collections
+	
+		- Array
+		
+			L'objet global Array est utilisé pour créer des tableaux. les tableaux sont des objets de haut-niveau (en termes de complexité homme-machine) semblables à des listes.
+		
+		- Arraybuffer
+		
+			L'objet ArrayBuffer est utilisé afin de représenter un tampon (buffer) de données binaires de longueur fixe de façon générique. La manipulation du contenu d'un ArrayBuffer se fait de façon indirecte en créant un tableau typé ou un objet DataView qui permet de représenter le tampon dans un format donné qui permet de lire/écrire des contenus dans le tampon de mémoire.
+		
+		- Int8array
+		
+			Le tableau typé Int8Array permet de représenter un tableau d'entiers signés (en complément à deux) représentés sur 8 bits. Les éléments du tableau sont initialisés à 0. 
+		
+		- Int16array
+		
+			entiers signés représentés sur 16 bits
+		
+		- Int32array
+		
+			entiers signés représentés sur 32 bits
+		
+		- Uint8array
+		
+			Le tableau typé Uint8Array représente un tableau d'entiers non signés, représentés sur 8 bits. Les éléments du tableau sont initialisés à 0.
+		
+		- Uint16array
+		
+			entiers non signés, représentés sur 16 bits
+		
+		- Uint32array
+		
+			entiers non signés, représentés sur 32 bits
+		
+		- Float32array
+		
+			Le tableau typé Float32Array représente un tableau de nombres flottants représentés sur 32 bits (ce qui correspond au type C float), l'ordre des octets utilisés étant celui de la plate-forme.
+		
+		- Float64array
+		
+			nombres flottants représentés sur 64 bits
+		
+		- Map
+		
+			L'objet Map représente un dictionnaire, autrement dit une carte de clés/valeurs. N'importe quelle valeur valable en JavaScript (que ce soit les objets ou les valeurs de types primitifs) peut être utilisée comme clé ou comme valeur.
+		
+		- Set
+		
+			L'objet Set (Ensemble en français) permet de stocker des valeurs uniques, de n'importe quel type, que ce soit des valeurs d'un type primitif ou des objets.
+			
+		
+	7 . methods
+	
+		- function
+		
+			les fonctions peuvent être déclarées de deux manières : 
+				
+				. une fonction nommée function maFonction(args)
+				. une fonction anonyme assignée à une variable
+				
+				les fonctions n'ont pas de type, on peut retourner n'importe quelle valeur ou aucune valeur.
+				
+		
+		- function* generators
+		
+			les générateurs sont des fonctions qu'il est possible de quitter puis de reprendre.
+			le contexte d'un générateur est sauvegardé entre les reprises successives.
+				
+		- fonctions fléchées
+		
+			les "arrow functions" permettent de parcourir un tableau en utilisant une syntaxe plus concise qu'un map classique
+			
+			
+	8 . arguments / overloads
+
+		l'objet arguments est un objet, semblable à un tableau, correspondant aux arguments passés à une fonction.
+		cet objet n'est pas un Array: il est similaire à un Array, mais il n'a pas les propriétés d'un Array, exceptée la propriété length. Par exemple, il n'a pas la méthode pop. Néanmoins, il peut être converti en un vrai objet de type Array;
+		on peut appeler une fonction avec plus d'arguments que cette dernière accepte. cette technique permet de passer un nombre variable d'arguments.
+		
+			- arguments.callee : Référence à la fonction en cours d'exécution
+			
+			- arguments.length : Référence au nombre d'arguments passés à la fonction
+		
+		
+	. es6 classes / extends
+	
+		ES6 est le nouveau standard de la norme EcmaScript édité en 2016
+		il comprend de nombreuses fonctionnalités intégrées au JavaScript qui le rapprochent de plus en plus des langages objet classiques.
+		on peut ainsi écrire des classes et profiter pleinement des extends et nouvelles implémentations.
+		la norme ES6 n'est cependant pas supportée par 100% des navigateurs modernes.
+		> http://www.webbrowsercompatibility.com/es6/tablet-phone/
+		> http://www.webbrowsercompatibility.com/es6/desktop/
+		
+		ATTENTION : la syntaxe des classes ES6 n'est pour l'instant que visuelle
+	
+	
+	. es5 scope
+	
+		l'équivalent des classes en ES5 consiste à enfermer les fonctions propre à un objet à l'intérieur d'une méthode anonyme exécutée au chargement du fichier de script dans le navigateur.
+		son but est d'intégrer les méthodes définies dans ladite classe au moteur JavaScript.
+		en effet, le JavaScript permet de définir des fonctions puis de les instancier avec le mot-clé "new"
+		il existe une deuxième méthode pour simuler des classes en ES5, qui consiste à créer un objet générique puis réécrire les méthodes de son prototype MyObject.prototype.maFonction = 
+		
+		
+	. selectors :
+	
+		les selectors sont des méthodes permettant d'accéder aux nœuds présents dans le DOM en utilisant des requêtes CSS
+	
+		- méthode querySelector : retourne le premier élément correspondant au sélecteur CSS spécifié
+		
+		- méthode querySelectorAll : retourne tous les éléments []
+	
+		les sélecteurs les plus répandus sont les id "#element" et les classes ".classe"
+		> sélecteurs css : https://www.w3schools.com/cssref/css_selectors.asp
+	
+		
+	. css / transforms
+	
+		> https://www.w3schools.com/cssref/
+	
+		- stylesheets
+		- 3d transforms
+		- positionning
+		- translations
+		- fonts
+		- margins
+		- paddings
+		- box sizings
+		
+	
+	. math
+	
+		- parseInt
+		
+			cast d'un objet vers un nombre entier
+		
+		- parseFloat
+			
+			cast d'un objet vers un nombre flottant
+		
+		- isFinite
+		
+			vérifie qu'un nombre est fini (!== "Infinity") > exemple : console.log(1 / 0) affiche "Infinity" et non pas une erreur comme les calculatrice scientifiques.
+		
+		- isNaN
+		
+			is Not a Number permet de vérifier qu'un objet n'est PAS un nombre. pour valider des nombres on utilisera donc :
+				if(!isNan(monObjet)) {
+					// c'est un nombre
+				}
+				else console.log("pas un nombre");
+		
+		- usual methods
+		
+			. abs : valeur absolue
+			. acos / cos : arc cos et cosinus
+			. asin / sin : arc sin et sinus
+			. atan / atan2 / tan : arc tan et tangente
+			. ceil : arrondi à l'entier supérieur
+			. exp : exponentiel
+			. floor : arrondi à l'entier inférieur
+			. log : logarithme
+			. max : max entre plusieurs valeurs
+			. min : minimum entre plusieurs valeurs
+			. pow : puissance
+			. random : float aléatoire entre 0 et 1 >> exemple : pour générer un bit aléatoire : Math.round(Math.random()); // 0 ou 1
+			. round : arrondi
+			. sqrt : racine carrée
+		
+		
+	. window handlers
+	
+		- onbeforeunload : cet événement est envoyé lorsque l'utilisateur s'apprète à changer de page ou fermer le navigateur. il permet notamment d'afficher une alerte si des tâches sont toujours en cours.
+		- onhashchange : déclenché lorsque le hash de l'url change (#section)
+		- onload : se déclenche à la fin du processus de chargement du document. à ce moment, tous les objets du document sont dans le DOM.
+		- onoffline : lorsque la navigateur perd la connexion internet
+		- ononline : de nouveau en ligne
+		- onpopstate : envoyé à la fenêtre à chaque fois que l'entrée actuelle de l'historique change
+		- onresize : envoyé lorsque la fenêtre change de dimensions
+		- onstorage : envoyé lorsqu'un objet du stockage change
+		- onunload : déclenché lorsque le contenu et les ressources sont déchargés à la fermeture de la fenêtre
+		
+		
+	. events
+	
+		- mouse : mousedown, mouseup, mousemove, mouseleave, mouseover
+		- touch : touchstart, touchend, touchmove
+		- media : événements envoyés lors des requêtes vers la caméra ou le micro de l'utilisateur (getUserMedia).
+	
+	
+	. regexp
+	
+		il existe deux manières d'instancier une regexp en JavaScript :
+			
+			/ab+c/i;
+			new RegExp("ab+c", "i");
+
+			
+	. animationFrame
+
+		l'API requestAnimationFrame permet d'exécuter du code à chaque rendu d'image du navigateur (60FPS)
+		on appelle window.requestAnimationFrame(method) pour se caler sur la prochaine frame
+		
+		var frameLoop; // int : id de la boucle de frame
+		function onFrame() {
+			frameLoop = window.requestAnimationFrame(onFrame); // on s'assure que la méthode sera exécutée à la prochaine frame
+			// on calcule l'image en cours et on l'affiche
+		}
+		
+		pour annuler la boucle de frame, il suffit d'appeler : window.cancelAnimationFrame(frameLoop);
+
+		
+	. promise
+
+		les promises permettent de surveiller la bon déroulement des procédures.
+		
+		l'objet Promise prend une méthode en argument, cette dernière ayant deux arguments :
+			- un pointeur vers une méthode qui sera exécutée si la procédure s'est bien déroulée (resolve)
+			- un pointeur vers une méthode qui sera exécutée en cas d'échec (reject)
+			
+		l'API Promise est chainé, il est donc possible d'écrire des séries de procédures
+		
+		les exemples de MDN sont très clairs : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+		
+			new Promise((resolve, reject) => { // on instancie un objet Promise
+				console.log('Initial');
+				
+				resolve(); // promesse tenue
+			})
+			.then(() => {
+				throw new Error('Something failed'); // on envoie une erreur, la promesse résulte donc d'un échec qui sera pris en charge par le catch() suivant s'il existe
+				
+				console.log('Do this'); // cette ligne ne sera pas exécutée car la promesse a été rompue
+			})
+			.catch(() => {
+				console.log('Do that'); // celle-ci sera exécutée car la promesse n'a pas été tenue
+			})
+			.then(() => {
+				console.log('Do this whatever happened before'); // après le then + catch, peu importe le résultat de la promesse, cette instruction sera exécutée
+			});
+			
+	
+	. web workers
+
+		les webworkers permettent d'effectuer des tâches lourdes en arrière plan sans geler l'interface utilisateur.
+			on instancie un worker : new Worker("monFichierWorker.js")
+			puis on communique avec celui-ci avec la méthode postMessage
+
+			
+	. mobile UI
+	
+		les éléments d'interface sur mobile doivent impérativement être assez gros pour permettre un clic avec le pouce
+		un site web non adapté pour mobile perd généralement plus de la moitié de ses visiteurs !
+	
+	
+	. responsive design
+	
+		l'interface utilisateur doit s'adapter automatiquement à la taille et à l'orientation de l'écran
+		écouter l'événement "onresize" du navigateur"
+
+		
+	. device hardware
+	
+		le JS peut très facilement accéder à certains périphériques des terminaux au travers des différents APIs
+	
+		- camera
+		- gps
+		- gyro
+		- compass
+		- orientation
+	
+
+	. html5 canvas
+	
+		l'élément <canvas sert à faire du dessin (comparable à Adobe Flash)
+
+
+	. json
+	
+		JavaScript Object Notation est une technique de serialisation dérivée de la notation des objets Javascript. Elle permet de stocker des données textuelles sour la forme clé / valeur ou des tableaux de valeurs avec une hiérarchie sans limite.
+		méthodes JS : JSON.stringify(monObjet) et son inverse JSON.parse(monObjetJSON);
+
+
+	. ajax
+
+		Asynchronous JavaScript And XML est la base des requêtes client serveur. Basé sur l'objet XMLHttpRequest, il permet d'envoyer des données vers un serveur qui se chargera de faire des calculs puis de renvoyer le résultat de manière asynchrone vers le client.
+		voir jQuery $.ajax()
+	
+	
+	. sockets
+
+		les navigateurs récents embarquent des sockets TCP & UDP permettant d'ouvrir des canaux de communications à double sens entre deux machines.
+		on peut alors déclencher des actions serveur depuis le client mais l'inverse devient possible : le serveur peut envoyer des données aux client sans que ce dernier n'ait fait de requête.
+
+		
+	. obfuscate / minify
+
+		l'obfuscation de code est un procédé ayant pour but de rendre le code illisible en renommant les variables et méthodes dans un premier temps, et dans un second temps de multiplier les appels de fonctions pour la pile d'exécution devienne très complexe à analyser.
+		certaines applications d'obfuscation apportent également des optimisations au code (cf. Google Closure Compiler)
+		le minify se contente de supprimer tous les "whitespace characters" (espaces, retours chariot) afin de rendre les fichiers plus légers.
+		les devtools de Google Chrome permettent cependant de reformater le code avec les indentations et sauts de lignes (prettify)
+	
+	
+	. webrtc
+
+		Web Real-Time Communication permet d'établir des communications en peer-to-peer directement entre les navigateurs. il est cependant indispensable qu'un serveur mette les pairs en relation avant de faire transiter des données.
+
+		
+	. https / cert / sha / rsa / aes / dh / pbkdf
+	
+		de nos jours, il est vivement conseillé d'implémenter des protocoles de sécurité dans les communications web.
+		les algorithmes sont presque tous disponibles dans les navigateurs :
+		
+			https : authentification TLS pour communications http sécurisées
+			cert : certificats permettant d'authentifier les utilisateurs
+			sha : tout mot de passe doit être "hashed" avant de le transmettre par le réseau
+			rsa : algorithme de crypto asymétrique : création de "keypairs", échange des clés publiques, puis chiffrement avec la clé publique et déchiffrement avec la clé privée.
+			aes : algorithme de chiffrement symétrique : clé unique servant à chiffrer et déchiffrer les données
+			dh : Diffie Hellman : protocole d'échange de clés permettant de ne pas faire transiter la clé symétrique en clair sur le réseau
+			pbkdf : technique de dérivation par hmac-sha successifs (généralement des milliers d'itérations)
+	
+	
+	. sanitize / user input
+	
+		il est indispensable de valider TOUTES les informations renseignées par l'utilisateur en utilisant des expressions régulières ou autre moyens de validation (String.length, ...)
+		à la sortie du navigateur ET à l'entrée du serveur car il est très simple de modifier les trames de données sortant d'un navigateur (avec WireShark par exemple)
+
+		
+	. webapp
+		
+		on peut inviter l'utilisateur (iOs / Android) à ajouter un site web directement sur son écran d'accueil, qui bénéficiera d'une interface épurée sans barre d'outils et barre d'url
+		il suffit pour ça d'ajouter une balise 
+		<meta name="apple-mobile-web-app-capable" content="yes"
+		ou
+		<meta name="mobile-web-app-capable" content="yes"
+		
+		la méthode getter "navigator.standalone" permet de savoir si le site web tourne dans un navigateur ou en webapp
+
+
+	. webextensions
+	
+		les webextensions permettent s'injecter du code dans les sites web afin de modifier leur aspect ou leurs fonctionnalités
+		on peut par exemple intercepter toutes les requêtes et choisir de les bloquer ou non (exemple AdBlock / Disconnect for Facebook)
+
+
+	. chrome apps
+	
+		il est possible de programmer des applications "natives" avec Google Chrome
+		ces applications sont des pages web bénéficiant d'une interface de navigateur épurée (pas de barres d'outils ni barre d'url)
+		l'architecture de base est la même qu'un site web (html, js, css) ainsi qu'un "background script" permettant d'effectuer des taches en arrière-plan
+
+
+	. appcache
+	
+		on peut contrôler la mise en cache de fichiers dans la navigateur grâce à l'API application cache, qui sera cependant remplacé d'ici peu par l'API ServiceWorkers
+		ceci permet de charger les contenus statiques plus rapidement après la première visite.
+		> https://developer.mozilla.org/fr/docs/Web/API/Service_Worker_API/Using_Service_Workers
+
+	
+	. webassembly
+	
+		WebAssembly est un nouveau type de code qui peut être exécuté dans un navigateur web moderne.
+		C'est un langage bas niveau, semblable à l'assembleur permettant d'atteindre des performances proches des applications natives (par exemple écrites en C/C++) tout en fonctionnant sur le Web.
+		WebAssembly est conçu pour fonctionner en lien avec JavaScript.
+		> https://developer.mozilla.org/fr/docs/WebAssembly
+
+		
+	. MVC
+	
+		Modèle-vue-contrôleur ou MVC est un motif d'architecture logicielle destiné aux interfaces graphiques lancé en 1978 et très populaire pour les applications web. Le motif est composé de trois types de modules ayant trois responsabilités différentes : les modèles, les vues et les contrôleurs.
+
+		Un modèle (Model) contient les données à afficher.
+		Une vue (View) contient la présentation de l'interface graphique.
+		Un contrôleur (Controller) contient la logique concernant les actions effectuées par l'utilisateur.
+		
+		l'article Wikipedia est très complet > https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur
+
+	
+	. devtools
+	
+		CHROME / OPERA > OSX : Command + Option + J / WIN-LINUX : Control + Shift + J
+		FIREFOX > OSX : Command + Option + K / WIN-LINUX : Control + Shift + K
+		IE / EDGE > F12
+		
+		Inspecteur
+		Permet de voir et modifier une page en HTML et en CSS. Permet de visualiser différents aspects de la page y compris les animations, l'agencement de la grille.
+
+		Console Web
+		Affiche les messages émis par la page web. Permet également d'interagir avec la page via JavaScript.
+
+		Débogueur JavaScript
+		Permet de parcourir, stopper, examiner et modifier le code JavaScript s’exécutant dans une page
+
+		Réseau
+		Permet d'inspecter les requêtes réseau lors du chargement de la page.
+
+		Performances
+		Permet d'analyser les performances de la réactivité globale, du JavaScript et, de l'agencement des sites.
+
+		Vue Adaptative
+		Permet de voir comment un site web ou une application se comporte sur différents types d'appareils et de connexions.
+	
+	
+	. mobile debug
+		
+		Chrome Desktop permet de débugger les navigateurs Chrome Android à distance
+		Safari OSX pour iOS
+	
+	. égalité strictes
+	
+		à lire, comprendre, et tester : https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/%C3%89galit%C3%A9_en_JavaScript
+
+
+technos:
+
+	. vanillajs
+	. npm / nodejs
+	. requirejs
+	. browserify
+	. angular
+	. jquery
+	. react
+	. underscore
+	. threejs
+	. awayjs
+	. modernizr
+	. bootstrap
+	. phonegap
+	. tweenmax
+	. clusterize
+	. famous
+	. materialize
